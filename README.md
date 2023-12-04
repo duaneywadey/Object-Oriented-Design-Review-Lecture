@@ -120,3 +120,56 @@ class MallMainClass {
 }
 
 ```
+
+# Java HashMap Sample Operations (Additional)
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.Collection;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Creating a HashMap with keys of type String and values of type Integer
+        HashMap<String, Integer> hashMap = new HashMap<>();
+
+        // Adding key-value pairs to the HashMap
+        hashMap.put("Apple", 10);
+        hashMap.put("Banana", 5);
+        hashMap.put("Orange", 8);
+        hashMap.put("Grapes", 15);
+
+        // keys() - Getting all keys from the HashMap
+        Set<String> keys = hashMap.keySet();
+        System.out.println("Keys: " + keys);
+
+        // values() - Getting all values from the HashMap
+        Collection<Integer> values = hashMap.values();
+        System.out.println("Values: " + values);
+
+        // items() - Getting all key-value pairs from the HashMap
+        Set<Map.Entry<String, Integer>> entries = hashMap.entrySet();
+        System.out.println("Key-Value Pairs: " + entries);
+
+        // get() - Getting value associated with a specific key
+        Integer value = hashMap.get("Apple");
+        System.out.println("Value for key 'Apple': " + value);
+
+        // pop() - Removing and returning value associated with a specific key
+        Integer poppedValue = hashMap.remove("Banana");
+        System.out.println("Popped value for key 'Banana': " + poppedValue);
+
+        // update() - Updating the HashMap with key-value pairs from another HashMap
+        HashMap<String, Integer> anotherHashMap = new HashMap<>();
+        anotherHashMap.put("Pineapple", 12);
+        anotherHashMap.put("Mango", 20);
+        hashMap.putAll(anotherHashMap);
+        System.out.println("Updated HashMap: " + hashMap);
+
+        // clear() - Removing all key-value pairs from the HashMap
+        hashMap.clear();
+        System.out.println("Cleared HashMap: " + hashMap);
+    }
+}
+```
